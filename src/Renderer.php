@@ -24,7 +24,18 @@ class Renderer {
     {
         $this->dbConfig = Yaml::parse('config/database.yml');
 
-        R::setup($this->dbConfig["type"].':.host='.$this->dbConfig["host"].';dbname='.$this->dbConfig["database"],$this->dbConfig["username"],$this->dbConfig["password"]);
+        #
+        # Set up Redbean database according to database configuration
+        #
+        switch($this->dbConfig['type']){
+
+            case 'sqlite':  R::setup('sqlite:'.$this->dbConfig['file']);
+                            break;
+
+            case 'mysql':   R::setup($this->dbConfig["type"].':.host='.$this->dbConfig["host"].';dbname='.$this->dbConfig["database"],$this->dbConfig["username"],$this->dbConfig["password"]);
+                            break;
+
+        }
 
         return $this;
     }

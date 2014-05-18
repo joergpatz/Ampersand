@@ -1,5 +1,6 @@
-type: mysql
+type: sqlite
+file: config/test.sqlite
 host: localhost
-username: root
-password: root
+username:
+password:
 database: ampersand
