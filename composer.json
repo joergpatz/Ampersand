@@ -1,0 +1,24 @@
+{
+    "name": "Ampersand",
+    "license": "GPLv3",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/GetAmpersand/HTML"
+        }
+    ],
+    "require": {
+        "slim/slim": "2.*",
+        "symfony/console": "2.2.*",
+        "symfony/finder": "2.3.*",
+        "symfony/filesystem": "2.3.*",
+        "symfony/yaml": "2.3.*",
+        "phpunit/phpunit": "3.7.24",
+        "GetAmpersand/HTML": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ampersand\\": "src/"
+        }
+    }
+}
