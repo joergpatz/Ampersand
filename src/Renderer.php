@@ -56,7 +56,7 @@ class Renderer {
         $filesystem->mkdir($destinationPath, $mode = 0775);
 
         file_put_contents($destinationPath.$destinationFile, $page->render());
-        echo($page->getTitle().'\n');
+        print $page->getTitle()."\n";
     }
 
 
