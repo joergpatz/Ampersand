@@ -6,15 +6,21 @@ use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Filesystem\Filesystem;
 use Ampersand\HTML\Page;
 
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
 require 'app/rb.phar';
 use R;
 
 
-class Renderer {
+class Renderer
+{
 
     private $dbConfig;
 
     private $renderDirectory = 'build';
+
+    private $log;
 
 
     #
@@ -23,6 +29,8 @@ class Renderer {
     public function __construct()
     {
         $this->dbConfig = Yaml::parse('config/database.yml');
+
+        $this->log = new Logger('Renderer');
 
         #
         # Set up Redbean database according to database configuration
@@ -66,7 +74,8 @@ class Renderer {
         $filesystem->mkdir($destinationPath, $mode = 0775);
 
         file_put_contents($destinationPath.$destinationFile, $page->render());
-        print $page->getTitle()." [".$destinationFile."] \n";
+
+        $this->log->addInfo("Rendering page ".$page->getTitle()." to ".$destinationFile);
     }
 
 
@@ -83,7 +92,7 @@ class Renderer {
             }
         }
 
-        return "Finished";
+        $this->log->addInfo("Finished rendering pages");
     }
 
 
@@ -107,7 +116,7 @@ class Renderer {
         if(file_exists($layoutFilePath)){
             return file_get_contents($layoutFilePath);
         } else {
-            print("Can't find layout ".$layoutFilePath."\n");
+            $this->log->addError("Can't find layout ".$layoutFilePath);
         }
 
         return false;

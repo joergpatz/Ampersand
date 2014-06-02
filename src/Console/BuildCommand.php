@@ -7,27 +7,37 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
 #
 # Build Command
 #
 class BuildCommand extends Command
 {
 
-    #
-    # Configure
-    #
+    private $log;
+
+
+    /*
+     * Configure
+     */
     protected function configure()
     {
         $this->setName('build')->setDescription('Build site');
+        $this->log = new Logger('Renderer');
     }
 
-    #
-    # Execute
-    #
+
+    /*
+     * Execute
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $this->log->pushHandler(new StreamHandler(fopen('php://stdout', 'w')));
+
         $renderer = new \Ampersand\Renderer;
-        $output->writeln("Building site...");
-        $output->writeln($renderer->renderAll());
+        $this->log->addInfo('Building site...');
+        $renderer->renderAll();
     }
 }

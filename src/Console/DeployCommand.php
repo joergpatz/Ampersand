@@ -8,6 +8,9 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Yaml;
 
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
 use Ampersand\Deploy\D;
 
 #
@@ -16,33 +19,42 @@ use Ampersand\Deploy\D;
 class DeployCommand extends Command
 {
 
-    #
-    # Configure
-    #
+    private $log;
+
+
+    /*
+     * Configure
+     */
     protected function configure()
     {
         $this->setName('deploy')->setDescription('Deploy site');
+        $this->log = new Logger('Deployment');
     }
 
-    #
-    # Execute
-    #
+
+    /*
+     * Execute
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $this->log = new Logger('Renderer');
+        $this->log->pushHandler(new StreamHandler(fopen('php://stdout', 'w')));
+
         $config = Yaml::parse('config/environments.yml');
-        #$output->writeln(print_r($config,true));
 
         $deploy = D::setup($config['testftp']);
 
-        $output->writeln("Testing connection ...");
+        $this->log->addInfo("Testing connection...");
         if(D::testConnection('ftp')){
-            $output->writeln("Connection works.");
+            $this->log->addInfo("Connection works");
+        } else {
+            $this->log->addError("Couldn't establish connection");
         }
 
-        $output->writeln("Deploying build directory");
+        $this->log->addInfo("Deploying build directory");
 
         D::syncContents('ftp');
 
-        $output->writeln("Deploying site...");
+        $this->log->addInfo("Deploying site");
     }
 }
