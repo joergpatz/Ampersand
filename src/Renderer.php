@@ -102,7 +102,7 @@ class Renderer {
 
         $layoutId = !empty($layoutIdParts[1]) ? $layoutIdParts[1] : 'index';
 
-        $layoutFilePath = 'bundles'.DIRECTORY_SEPARATOR.$bundleId.DIRECTORY_SEPARATOR.'layouts'.DIRECTORY_SEPARATOR.$layoutId.'.html';
+        $layoutFilePath = 'bundles'.DIRECTORY_SEPARATOR.$bundleId.DIRECTORY_SEPARATOR.'layout'.DIRECTORY_SEPARATOR.$layoutId.'.html';
 
         if(file_exists($layoutFilePath)){
             return file_get_contents($layoutFilePath);
