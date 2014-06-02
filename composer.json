@@ -17,8 +17,8 @@
         "symfony/finder": "2.3.*",
         "symfony/filesystem": "2.3.*",
         "symfony/yaml": "2.3.*",
-        "GetAmpersand/HTML": "dev-master",
-        "GetAmpersand/Deploy": "dev-master",
+        "Ampersand/HTML": "dev-master",
+        "Ampersand/Deploy": "dev-master",
         "monolog/monolog": "1.9.*@dev"
     },
     "autoload": {

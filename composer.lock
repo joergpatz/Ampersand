@@ -1,22 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "86df9fae03e72ea8417b83063a0e3393",
+    "hash": "0e141845d1b431f96b127f96c8bcada1",
     "packages": [
         {
-            "name": "GetAmpersand/Deploy",
+            "name": "Ampersand/Deploy",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GetAmpersand/Deploy.git",
-                "reference": "21e12273f4719316185fa687b5d41f7c2231d1c3"
+                "reference": "c3d23c32cb23e11c44ba566994af6cf8d2206f79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GetAmpersand/Deploy/zipball/21e12273f4719316185fa687b5d41f7c2231d1c3",
-                "reference": "21e12273f4719316185fa687b5d41f7c2231d1c3",
+                "url": "https://api.github.com/repos/GetAmpersand/Deploy/zipball/c3d23c32cb23e11c44ba566994af6cf8d2206f79",
+                "reference": "c3d23c32cb23e11c44ba566994af6cf8d2206f79",
                 "shasum": ""
             },
             "require": {
@@ -27,7 +28,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "GetAmpersand\\Deploy\\": "src/"
+                    "Ampersand\\Deploy\\": "src/"
                 }
             },
             "license": [
@@ -56,20 +57,20 @@
                 "source": "https://github.com/GetAmpersand/Deploy/tree/master",
                 "issues": "https://github.com/GetAmpersand/Deploy/issues"
             },
-            "time": "2014-05-28 23:57:18"
+            "time": "2014-06-02 13:19:26"
         },
         {
-            "name": "GetAmpersand/HTML",
+            "name": "Ampersand/HTML",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GetAmpersand/HTML.git",
-                "reference": "0f6174b6bc47ca2558e09b190161e8771deea1f3"
+                "reference": "27ca9f0be10894efe6b5c01c5f1c9e91c18aa376"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GetAmpersand/HTML/zipball/0f6174b6bc47ca2558e09b190161e8771deea1f3",
-                "reference": "0f6174b6bc47ca2558e09b190161e8771deea1f3",
+                "url": "https://api.github.com/repos/GetAmpersand/HTML/zipball/27ca9f0be10894efe6b5c01c5f1c9e91c18aa376",
+                "reference": "27ca9f0be10894efe6b5c01c5f1c9e91c18aa376",
                 "shasum": ""
             },
             "require": {
@@ -79,7 +80,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Ampersand\\": "src/"
+                    "Ampersand\\HTML\\": "src/"
                 }
             },
             "license": [
@@ -103,7 +104,7 @@
                 "source": "https://github.com/GetAmpersand/HTML/tree/master",
                 "issues": "https://github.com/GetAmpersand/HTML/issues"
             },
-            "time": "2014-05-19 21:06:50"
+            "time": "2014-06-02 13:11:09"
         },
         {
             "name": "league/flysystem",
@@ -669,8 +670,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "getampersand/html": 20,
-        "getampersand/deploy": 20,
+        "ampersand/html": 20,
+        "ampersand/deploy": 20,
         "monolog/monolog": 20
     },
     "platform": [
