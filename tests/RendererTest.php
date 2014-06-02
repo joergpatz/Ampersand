@@ -13,5 +13,13 @@ class RendererTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue( $renderer instanceof Renderer );
     }
 
+    /*
+    public function testIfPagesGetRendered()
+    {
+        $renderer = new Renderer();
+        return true;
+    }
+     */
+
 }
 

@@ -41,6 +41,12 @@ class Renderer {
     }
 
 
+    public function __destruct()
+    {
+        R::close();
+    }
+
+
     public function render($pageId)
     {
         $filesystem = new Filesystem();
@@ -49,6 +55,10 @@ class Renderer {
         $page = new Page;
         $page->setTitle($pageRecord['title']);
 
+        if(!empty($pageRecord['layout'])){
+            $page->setLayout($this->getLayout($pageRecord['layout']));
+        }
+
         $destinationPath = $this->renderDirectory.DIRECTORY_SEPARATOR;
         $destinationFile = $this->sanitizePageTitle($page->getTitle()).'.html';
 
@@ -56,7 +66,7 @@ class Renderer {
         $filesystem->mkdir($destinationPath, $mode = 0775);
 
         file_put_contents($destinationPath.$destinationFile, $page->render());
-        print $page->getTitle()."\n";
+        print $page->getTitle()." [".$destinationFile."] \n";
     }
 
 
@@ -82,4 +92,24 @@ class Renderer {
         return strToLower($title);
     }
 
+
+    private function getLayout($layoutId)
+    {
+        $layoutIdParts = explode('/',$layoutId);
+
+        $bundleId = !empty($layoutIdParts[0]) ? $layoutIdParts[0] : false;
+        if(!$bundleId) return false;
+
+        $layoutId = !empty($layoutIdParts[1]) ? $layoutIdParts[1] : 'index';
+
+        $layoutFilePath = 'bundles'.DIRECTORY_SEPARATOR.$bundleId.DIRECTORY_SEPARATOR.'layouts'.DIRECTORY_SEPARATOR.$layoutId.'.html';
+
+        if(file_exists($layoutFilePath)){
+            return file_get_contents($layoutFilePath);
+        } else {
+            print("Can't find layout ".$layoutFilePath."\n");
+        }
+
+        return false;
+    }
 }
