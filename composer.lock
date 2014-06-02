@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GetAmpersand/Deploy.git",
-                "reference": "c3d23c32cb23e11c44ba566994af6cf8d2206f79"
+                "reference": "840217eea714ebaaf841713966dc9d3fa346ca74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GetAmpersand/Deploy/zipball/c3d23c32cb23e11c44ba566994af6cf8d2206f79",
-                "reference": "c3d23c32cb23e11c44ba566994af6cf8d2206f79",
+                "url": "https://api.github.com/repos/GetAmpersand/Deploy/zipball/840217eea714ebaaf841713966dc9d3fa346ca74",
+                "reference": "840217eea714ebaaf841713966dc9d3fa346ca74",
                 "shasum": ""
             },
             "require": {
@@ -57,7 +57,7 @@
                 "source": "https://github.com/GetAmpersand/Deploy/tree/master",
                 "issues": "https://github.com/GetAmpersand/Deploy/issues"
             },
-            "time": "2014-06-02 13:19:26"
+            "time": "2014-06-02 13:59:07"
         },
         {
             "name": "Ampersand/HTML",

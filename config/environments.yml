@@ -1,0 +1,15 @@
+testftp:
+    -
+        driver: local
+        path: 'build/'
+
+    -
+        driver: 'ftp'
+        host: 'endofline.ws'
+        username: 'web53'
+        password: 'Y1b15muV'
+        root: '/files/deploy'
+        port: 21
+        passive: true
+        timeout: 30
+
