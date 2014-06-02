@@ -44,7 +44,7 @@ class Renderer {
     public function render($pageId)
     {
         $filesystem = new Filesystem();
-        $pageRecord = R::getRow('SELECT * FROM pages WHERE id = ?',[$pageId]);
+        $pageRecord = R::getRow('SELECT * FROM pages WHERE id = ?', array($pageId));
 
         $page = new Page;
         $page->setTitle($pageRecord['title']);
