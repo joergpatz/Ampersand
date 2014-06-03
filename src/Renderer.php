@@ -61,13 +61,14 @@ class Renderer
         $pageRecord = R::getRow('SELECT * FROM pages WHERE id = ?', array($pageId));
 
         $page = new Page(array(
+            'layout_directory' => 'bundles/default/layouts/',
             'cache_directory' => 'tmp/templates/',
             'logger' => $this->log
         ));
         $page->setTitle($pageRecord['title']);
 
         if(!empty($pageRecord['layout'])){
-            $page->setLayout($this->getLayout($pageRecord['layout']));
+            $page->setLayout($pageRecord['layout']);
         }
 
         $destinationPath = $this->renderDirectory.DIRECTORY_SEPARATOR;
@@ -104,24 +105,4 @@ class Renderer
         return strToLower($title);
     }
 
-
-    private function getLayout($layoutId)
-    {
-        $layoutIdParts = explode('/',$layoutId);
-
-        $bundleId = !empty($layoutIdParts[0]) ? $layoutIdParts[0] : false;
-        if(!$bundleId) return false;
-
-        $layoutId = !empty($layoutIdParts[1]) ? $layoutIdParts[1] : 'index';
-
-        $layoutFilePath = 'bundles'.DIRECTORY_SEPARATOR.$bundleId.DIRECTORY_SEPARATOR.'layout'.DIRECTORY_SEPARATOR.$layoutId.'.html';
-
-        if(file_exists($layoutFilePath)){
-            return file_get_contents($layoutFilePath);
-        } else {
-            $this->log->addError("Can't find layout ".$layoutFilePath);
-        }
-
-        return false;
-    }
 }
