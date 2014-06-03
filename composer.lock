@@ -65,15 +65,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GetAmpersand/HTML.git",
-                "reference": "27ca9f0be10894efe6b5c01c5f1c9e91c18aa376"
+                "reference": "d1f76415ec72e864e080d85d4ecca40de7e1118d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GetAmpersand/HTML/zipball/27ca9f0be10894efe6b5c01c5f1c9e91c18aa376",
-                "reference": "27ca9f0be10894efe6b5c01c5f1c9e91c18aa376",
+                "url": "https://api.github.com/repos/GetAmpersand/HTML/zipball/d1f76415ec72e864e080d85d4ecca40de7e1118d",
+                "reference": "d1f76415ec72e864e080d85d4ecca40de7e1118d",
                 "shasum": ""
             },
             "require": {
+                "mnapoli/front-yaml": "*",
                 "mustache/mustache": "2.6.0",
                 "php": ">=5.3.0"
             },
@@ -104,7 +105,46 @@
                 "source": "https://github.com/GetAmpersand/HTML/tree/master",
                 "issues": "https://github.com/GetAmpersand/HTML/issues"
             },
-            "time": "2014-06-02 13:11:09"
+            "time": "2014-06-03 09:58:43"
+        },
+        {
+            "name": "erusev/parsedown",
+            "version": "0.9.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown.git",
+                "reference": "d29ff18299210b52a75a631a70963e7c8b35b04f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/d29ff18299210b52a75a631a70963e7c8b35b04f",
+                "reference": "d29ff18299210b52a75a631a70963e7c8b35b04f",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Parsedown": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "Parser for Markdown.",
+            "homepage": "http://parsedown.org",
+            "keywords": [
+                "markdown",
+                "parser"
+            ],
+            "time": "2014-02-06 12:16:14"
         },
         {
             "name": "league/flysystem",
@@ -172,6 +212,36 @@
                 "sftp"
             ],
             "time": "2014-05-13 19:56:59"
+        },
+        {
+            "name": "mnapoli/front-yaml",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mnapoli/FrontYAML.git",
+                "reference": "4c42c242525d228b8042ab1c331abb666c51d270"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mnapoli/FrontYAML/zipball/4c42c242525d228b8042ab1c331abb666c51d270",
+                "reference": "4c42c242525d228b8042ab1c331abb666c51d270",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "~0.8",
+                "symfony/yaml": "~2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mni\\FrontYAML\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2014-01-25 00:05:48"
         },
         {
             "name": "monolog/monolog",

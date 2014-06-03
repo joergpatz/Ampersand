@@ -60,7 +60,10 @@ class Renderer
         $filesystem = new Filesystem();
         $pageRecord = R::getRow('SELECT * FROM pages WHERE id = ?', array($pageId));
 
-        $page = new Page;
+        $page = new Page(array(
+            'cache_directory' => 'tmp/templates/',
+            'logger' => $this->log
+        ));
         $page->setTitle($pageRecord['title']);
 
         if(!empty($pageRecord['layout'])){
