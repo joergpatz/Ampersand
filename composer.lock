@@ -65,12 +65,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GetAmpersand/HTML.git",
-                "reference": "bece7e46a27d514975dfe75e19d595b9ef906f64"
+                "reference": "f0d77f8d35885e5ef1df35a5273b6e9a4d7f331a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GetAmpersand/HTML/zipball/bece7e46a27d514975dfe75e19d595b9ef906f64",
-                "reference": "bece7e46a27d514975dfe75e19d595b9ef906f64",
+                "url": "https://api.github.com/repos/GetAmpersand/HTML/zipball/f0d77f8d35885e5ef1df35a5273b6e9a4d7f331a",
+                "reference": "f0d77f8d35885e5ef1df35a5273b6e9a4d7f331a",
                 "shasum": ""
             },
             "require": {
@@ -105,7 +105,7 @@
                 "source": "https://github.com/GetAmpersand/HTML/tree/master",
                 "issues": "https://github.com/GetAmpersand/HTML/issues"
             },
-            "time": "2014-06-03 15:03:42"
+            "time": "2014-06-03 15:25:37"
         },
         {
             "name": "erusev/parsedown",
