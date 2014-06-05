@@ -1,3 +1,4 @@
+# URL: http://testftp.endofline.ws
 testftp:
     -
         driver: local
@@ -6,10 +7,9 @@ testftp:
     -
         driver: 'ftp'
         host: 'endofline.ws'
-        username: 'web53'
-        password: 'Y1b15muV'
-        root: '/files/deploy'
+        username: 'web53f1'
+        password: 'bjwcWkPr'
+        root: '/'
         port: 21
         passive: true
-        timeout: 30
-
+        timeout: 20
