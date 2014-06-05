@@ -12,18 +12,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GetAmpersand/Deploy.git",
-                "reference": "840217eea714ebaaf841713966dc9d3fa346ca74"
+                "reference": "3ad6a1aac4141934d8b487fb5f2c30c44dfe5d13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GetAmpersand/Deploy/zipball/840217eea714ebaaf841713966dc9d3fa346ca74",
-                "reference": "840217eea714ebaaf841713966dc9d3fa346ca74",
+                "url": "https://api.github.com/repos/GetAmpersand/Deploy/zipball/3ad6a1aac4141934d8b487fb5f2c30c44dfe5d13",
+                "reference": "3ad6a1aac4141934d8b487fb5f2c30c44dfe5d13",
                 "shasum": ""
             },
             "require": {
                 "league/flysystem": "0.4.*",
-                "php": ">=5.4.0",
-                "phpseclib/phpseclib": "~0.3.6"
+                "php": ">=5.3.0",
+                "phpseclib/phpseclib": "~0.3.6",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "monolog/monolog": "1.10.*@dev"
             },
             "type": "library",
             "autoload": {
@@ -57,7 +61,7 @@
                 "source": "https://github.com/GetAmpersand/Deploy/tree/master",
                 "issues": "https://github.com/GetAmpersand/Deploy/issues"
             },
-            "time": "2014-06-02 13:59:07"
+            "time": "2014-06-05 19:29:50"
         },
         {
             "name": "Ampersand/HTML",
@@ -249,12 +253,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "016423a804140a33814b8fad4240dbfa49a884da"
+                "reference": "25b16e801979098cb2f120e697bfce454b18bf23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/016423a804140a33814b8fad4240dbfa49a884da",
-                "reference": "016423a804140a33814b8fad4240dbfa49a884da",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/25b16e801979098cb2f120e697bfce454b18bf23",
+                "reference": "25b16e801979098cb2f120e697bfce454b18bf23",
                 "shasum": ""
             },
             "require": {
@@ -282,7 +286,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.9.x-dev"
+                    "dev-master": "1.10.x-dev"
                 }
             },
             "autoload": {
@@ -309,7 +313,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-05-29 15:04:35"
+            "time": "2014-06-04 16:30:04"
         },
         {
             "name": "mustache/mustache",
