@@ -61,8 +61,9 @@ class Renderer
         $pageRecord = R::getRow('SELECT * FROM pages WHERE id = ?', array($pageId));
 
         $page = new Page(array(
-            'layout_directory' => 'bundles/default/layouts/',
-            'cache_directory' => 'tmp/templates/',
+            'layout_directory' => 'bundles/default/layouts',
+            'stylesheet_source_directory' => 'bundles/default/stylesheets',
+            'cache_directory' => 'tmp/templates',
             'logger' => $this->log
         ));
         $page->setTitle($pageRecord['title']);
@@ -78,6 +79,9 @@ class Renderer
         $filesystem->mkdir($destinationPath, $mode = 0775);
 
         file_put_contents($destinationPath.$destinationFile, $page->render());
+
+        # Copy stylesheets and Javascript files to build folder
+        $page->copyAssets($destinationPath);
 
         $this->log->addInfo("Rendering page ".$page->getTitle()." to ".$destinationFile);
     }
