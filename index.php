@@ -1,45 +1,20 @@
 <?php
+/*
+ * Start
+ */
+// define the index working directory
+define('APP_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 
-require 'vendor/autoload.php';
+// Composer autoload
+require APP_PATH . 'vendor/autoload.php';
 
-use Symfony\Component\Yaml\Yaml;
+//Start the app
+require APP_PATH . 'src/Slim/Start.php';
 
-// Redbean ORM
-require 'app/rb.phar';
-
-### Database initialization
-$dbConfig = Yaml::parse('config/database.yml');
-
-#
-# Set up Redbean database according to database configuration
-#
-switch($dbConfig['type']){
-
-    case 'sqlite':  R::setup('sqlite:'.$dbConfig['file']);
-                    break;
-
-    case 'mysql':   R::setup($dbConfig["type"].':.host='.$this->dbConfig["host"].';dbname='.$this->dbConfig["database"],$this->dbConfig["username"],$this->dbConfig["password"]);
-                    break;
-}
-
-
-$app = new \Slim\Slim;
-
-// Pages routes
-$app->get('/pages', function () use ($app){
-
-    $pages = R::getAssoc('SELECT * FROM pages');
-
-    $app->response()->header('Content-Type', 'application/json');
-    echo json_encode($pages);
-
-});
-
-
-$app->get('/', function () {
-    echo "Hello, Ampersand";
-});
-
+/*
+ * Run
+ */
+require APP_PATH . 'src/Slim/Routes.php';
 
 $app->run();
 
