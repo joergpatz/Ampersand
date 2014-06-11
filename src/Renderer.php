@@ -62,7 +62,8 @@ class Renderer
 
         $page = new Page(array(
             'layout_directory' => 'bundles/default/layouts',
-            'stylesheet_source_directory' => 'bundles/default/stylesheets',
+            'stylesheet_source_directory' => 'bundles/default/css',
+            'javascript_source_directory' => 'bundles/default/js',
             'cache_directory' => 'tmp/templates',
             'logger' => $this->log
         ));
