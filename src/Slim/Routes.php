@@ -14,7 +14,7 @@ function callFunc($callable)
     };
 }
 
-$app->get('/pages/:id', callFunc(array('\Ampersand\Slim\Controllers\Pages', 'index'), $app))->name('pages-index');
+$app->get('/pages', callFunc(array('\Ampersand\Slim\Controllers\Pages', 'index'), $app))->name('pages-index');
 
 $app->get('/', function () {
     echo "Hello, Ampersand!";
