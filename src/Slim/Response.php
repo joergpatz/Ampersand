@@ -13,13 +13,14 @@ namespace Ampersand\Slim;
  */
 class Response extends \Slim\Http\Response
 {
-    /**
-     *  Set content as a json body
-     *
-     * @param array $content
-     */
-    public function setJsonBody(array $content)
+    public function setBody($content)
     {
-        parent::setBody(json_encode($content));
+        $contentType = $this->headers->get('Content-Type');
+
+        if ($contentType === 'application/json') {
+            $content = json_encode($content);
+        }
+
+        parent::setBody($content);
     }
 }

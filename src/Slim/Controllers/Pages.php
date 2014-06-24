@@ -11,6 +11,6 @@ class Pages
     {
         $pages = R::exportAll(R::findAll(self::$table));
 
-        $app->response->setJsonBody($pages);
+        $app->response->setBody($pages);
     }
 }
