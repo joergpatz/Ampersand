@@ -2,7 +2,12 @@
 
 namespace Ampersand\Slim\Middlewares;
 
-
+/**
+ * Class AcceptHeaderMiddleware
+ *
+ * The Accept request-header field can be used to specify certain media types which are acceptable for the response.
+ * @package Ampersand\Slim\Middlewares
+ */
 class AcceptHeaderMiddleware extends \Slim\Middleware
 {
     public function call()
@@ -18,7 +23,7 @@ class AcceptHeaderMiddleware extends \Slim\Middleware
             $acceptType = strtolower($acceptTypeParts[0]);
         }
 
-        // Set response header according to the client accept header
+        // Set response header according to the client acceptance
         switch($acceptType) {
             case 'application/json':
             default:
