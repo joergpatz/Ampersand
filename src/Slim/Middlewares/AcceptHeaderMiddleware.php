@@ -10,13 +10,19 @@ class AcceptHeaderMiddleware extends \Slim\Middleware
         // Get reference to application
         $app = $this->app;
 
-        // Get Accept Header
-        $accept = $app->request->headers->get('Accept');
+        // Get the clients Accept header type
+        $acceptType = $app->request->headers->get('Accept');
 
-        // Set Response Header according to the client accept header
-        switch($accept) {
+        if ($acceptType) {
+            $acceptTypeParts = preg_split('/\s*[;,]\s*/', $acceptType);
+            $acceptType = strtolower($acceptTypeParts[0]);
+        }
+
+        // Set response header according to the client accept header
+        switch($acceptType) {
             case 'application/json':
             default:
+                //TODO: send API-Problem 406 Not Acceptable
                 $app->response->headers->set('Content-Type', 'application/json');
         }
 
