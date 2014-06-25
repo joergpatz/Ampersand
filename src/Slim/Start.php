@@ -31,4 +31,4 @@ $app->container->singleton('response', function () {
 
 $app->setName('Ampersand');
 $app->add(new \Slim\Middleware\ContentTypes());
-$app->add(new \Ampersand\Slim\Middlewares\AcceptHeaderMiddleware());
+$app->add(new \Ampersand\Slim\Middlewares\AcceptHeader());

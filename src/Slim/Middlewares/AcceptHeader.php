@@ -3,12 +3,12 @@
 namespace Ampersand\Slim\Middlewares;
 
 /**
- * Class AcceptHeaderMiddleware
+ * Class AcceptHeader
  *
  * The Accept request-header field can be used to specify certain media types which are acceptable for the response.
  * @package Ampersand\Slim\Middlewares
  */
-class AcceptHeaderMiddleware extends \Slim\Middleware
+class AcceptHeader extends \Slim\Middleware
 {
     public function call()
     {
