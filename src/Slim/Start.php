@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Europe/Berlin');
+
 /*
  * setup Redbean ORM
  */
@@ -18,6 +20,9 @@ switch($dbConfig['type']) {
     case 'mysql':   R::setup($dbConfig["type"].':.host='.$this->dbConfig["host"].';dbname='.$this->dbConfig["database"],$this->dbConfig["username"],$this->dbConfig["password"]);
                     break;
 }
+
+// rb Models Observer need a namespacing constant for fusing beans with models
+define('REDBEAN_MODEL_PREFIX', '\\Ampersand\\RedBeanPHP\\');
 
 /*
  * create a new Slim application instance
