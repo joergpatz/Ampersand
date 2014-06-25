@@ -9,37 +9,66 @@ class Pages
 
     static public function index($app)
     {
-        // retrieve all beans in pages table and convert them to an array
-        $pages = R::exportAll(R::findAll(self::$table));
+        // retrieve all beans from pages table
+        $pages = R::findAll(self::$table);
 
-        $app->response->setBody($pages);
+        $app->response->setBody(R::exportAll($pages));
     }
 
     static public function show($app, $id)
     {
-        // retrieve a single bean by ID and convert it to an array
-        $page = R::load(self::$table, $id)->export();
+        // retrieve a single bean by ID
+        $page = R::load(self::$table, $id);
 
         //TODO: findOrFail
 
-        $app->response->setBody($page);
+        $app->response->setBody($page->export());
     }
 
     static public function store($app)
     {
-        //get the request body, a middleware automatically convert the json to an array
+        // get the request body, a middleware automatically convert the json to an array
         $body = $app->request->getBody();
 
-        //create a new page
+        // create a new page
         $page = R::dispense(self::$table);
-        $page->title = $body['title'];
-        $page->layout = $body['layout'];
+        // import all values from the body data with a property selection
+        $page->import($body, 'title,layout');
 
-        $id = R::store($page);
+        R::store($page);
 
-        // retrieve the created bean by ID and send back to the client
-        $page = R::load(self::$table, $id)->export();
+        // send back the freshly loaded bean
+        $app->response->setBody($page->fresh()->export());
+    }
 
-        $app->response->setBody($page);
+    static public function update($app, $id)
+    {
+        // get the request body, a middleware automatically convert the json to an array
+        $body = $app->request->getBody();
+
+        // retrieve the single bean object by ID
+        $page = R::load(self::$table, $id);
+
+        //TODO: findOrFail
+
+        // import all values from the body data with a property selection
+        $page->import($body, 'title,layout');
+
+        R::store($page);
+
+        // send back the freshly loaded bean
+        $app->response->setBody($page->fresh()->export());
+    }
+
+    static public function delete($app, $id)
+    {
+        // retrieve a single bean by ID
+        $page = R::load(self::$table, $id);
+
+        //TODO: findOrFail
+
+        R::trash($page);
+
+        $app->response->setBody(array('message' => 'The page resource was deleted.'));
     }
 }
