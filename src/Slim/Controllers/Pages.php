@@ -34,6 +34,8 @@ class Pages
         $page = R::dispense(self::$table);
         // import all values from the body data with a property selection
         $page->import($body, 'title,layout');
+        $page->created_at = R::isoDateTime();
+        $page->updated_at = R::isoDateTime();
 
         R::store($page);
 
@@ -53,6 +55,7 @@ class Pages
 
         // import all values from the body data with a property selection
         $page->import($body, 'title,layout');
+        $page->updated_at = R::isoDateTime();
 
         R::store($page);
 
