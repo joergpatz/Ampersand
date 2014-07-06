@@ -30,10 +30,11 @@ define('REDBEAN_MODEL_PREFIX', '\\Ampersand\\RedBeanPHP\\');
 $app = new \Slim\Slim;
 
 // Override Slim's default Response object
-$app->container->singleton('response', function () {
+$app->container->singleton('response', function() {
     return new \Ampersand\Slim\Response();
 });
 
 $app->setName('Ampersand');
 $app->add(new \Slim\Middleware\ContentTypes());
+$app->add(new \Ampersand\Slim\Middlewares\Cors());
 $app->add(new \Ampersand\Slim\Middlewares\AcceptHeader());
