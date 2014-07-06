@@ -6,7 +6,7 @@ namespace Ampersand\Slim\Middlewares;
  * Class Cors
  *
  * Enable Cross-Origin Resource Sharing (CORS)
- * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+ * @link http://www.w3.org/TR/cors/
  *
  * @package Ampersand\Slim\Middlewares
  */
