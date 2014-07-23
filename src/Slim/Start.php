@@ -1,12 +1,10 @@
 <?php
-date_default_timezone_set('Europe/Berlin');
+use Symfony\Component\Yaml\Yaml;
 
 /*
  * setup Redbean ORM
  */
 require APP_PATH . 'app/rb.phar';
-
-use Symfony\Component\Yaml\Yaml;
 
 // Database initialization
 $dbConfig = Yaml::parse(APP_PATH . 'config/database.yml');
@@ -17,7 +15,7 @@ switch($dbConfig['type']) {
     case 'sqlite':  R::setup('sqlite:'.$dbConfig['file']);
                     break;
 
-    case 'mysql':   R::setup($dbConfig["type"].':.host='.$this->dbConfig["host"].';dbname='.$this->dbConfig["database"],$this->dbConfig["username"],$this->dbConfig["password"]);
+    case 'mysql':   R::setup($dbConfig['type'].':.host='.$this->dbConfig['host'].';dbname='.$this->dbConfig['database'],$this->dbConfig['username'],$this->dbConfig['password']);
                     break;
 }
 
@@ -27,7 +25,13 @@ define('REDBEAN_MODEL_PREFIX', '\\Ampersand\\RedBeanPHP\\');
 /*
  * create a new Slim application instance
  */
-$app = new \Slim\Slim;
+$settings = Yaml::parse(APP_PATH . 'config/settings.yml');
+
+date_default_timezone_set($settings['timezone']);
+
+$app = new \Slim\Slim(array(
+    'mode' => $settings['mode']
+));
 
 // Override Slim's default Response object
 $app->container->singleton('response', function() {
