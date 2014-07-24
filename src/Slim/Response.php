@@ -17,8 +17,12 @@ class Response extends \Slim\Http\Response
     {
         $contentType = $this->headers->get('Content-Type');
 
-        if ($contentType === 'application/json') {
-            $content = json_encode($content);
+        if (is_array($content)) {
+            if ($contentType === 'application/json') {
+                $content = json_encode($content, JSON_NUMERIC_CHECK);
+            } else {
+                $content = implode(' ', $content);
+            }
         }
 
         parent::setBody($content);

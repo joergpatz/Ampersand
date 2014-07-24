@@ -16,8 +16,8 @@ $app->group('/pages', function() use ($app) {
 });
 
 // INDEX
-$app->get('/', function() {
-    echo "Hello, Ampersand!";
+$app->get('/', function() use ($app) {
+    $app->response->setBody(array('Hello, Ampersand!'));
 })->name('home');
 
 

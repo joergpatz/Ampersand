@@ -33,7 +33,7 @@ class Cors extends \Slim\Middleware
             //means e.g. if "index" and "store" action are on one route then you can perform GET, POST on "/pages" uri
             //default switch case is GET, okay then we do NOT need to write ONLY GET actions in a switch case
 
-            // action should the last portion of the name string
+            // need "$app->options" implementation in Routes.php, action should the last portion of the name string
             $action = substr(strrchr($route->getName(), '-'), 1);
             switch ($action) {
                 case 'index':
