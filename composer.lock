@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9d3755e791c52f348673c4c877a7c008",
+    "hash": "4e142fd43b38ab58c8080a9fb5f18861",
     "packages": [
         {
             "name": "Ampersand/Deploy",
@@ -12,17 +12,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GetAmpersand/Deploy.git",
-                "reference": "e2004a7a8a8dc3a4a86462f8b3f184c2fc3c5cc5"
+                "reference": "7530f2a2362182cf6ebb1ddbedd044a2f292ff41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GetAmpersand/Deploy/zipball/e2004a7a8a8dc3a4a86462f8b3f184c2fc3c5cc5",
-                "reference": "e2004a7a8a8dc3a4a86462f8b3f184c2fc3c5cc5",
+                "url": "https://api.github.com/repos/GetAmpersand/Deploy/zipball/7530f2a2362182cf6ebb1ddbedd044a2f292ff41",
+                "reference": "7530f2a2362182cf6ebb1ddbedd044a2f292ff41",
                 "shasum": ""
             },
             "require": {
                 "league/flysystem": "0.5.*",
-                "php": ">=5.3.4",
+                "php": ">=5.4.0",
                 "phpseclib/phpseclib": "~0.3.6",
                 "psr/log": "~1.0"
             },
@@ -61,7 +61,7 @@
                 "source": "https://github.com/GetAmpersand/Deploy/tree/master",
                 "issues": "https://github.com/GetAmpersand/Deploy/issues"
             },
-            "time": "2014-07-28 18:28:04"
+            "time": "2014-07-28 18:42:42"
         },
         {
             "name": "Ampersand/HTML",
@@ -822,7 +822,7 @@
     },
     "prefer-stable": false,
     "platform": {
-        "php": ">=5.3.4"
+        "php": ">=5.4.0"
     },
     "platform-dev": [
 
