@@ -14,13 +14,16 @@
     "require": {
         "php": ">=5.3.4",
         "slim/slim": "2.*",
-        "symfony/console": "2.2.*",
-        "symfony/finder": "2.3.*",
-        "symfony/filesystem": "2.3.*",
-        "symfony/yaml": "2.3.*",
+        "symfony/console": "2.5.*",
+        "symfony/finder": "2.5.*",
+        "symfony/filesystem": "2.5.*",
+        "symfony/yaml": "2.5.*",
         "Ampersand/HTML": "dev-master",
         "Ampersand/Deploy": "dev-master",
-        "monolog/monolog": "1.10.*@dev"
+        "monolog/monolog": "1.10.*"
+    },
+    "require-dev": {
+    	"filp/whoops": "1.*"
     },
     "autoload": {
         "psr-4": {
