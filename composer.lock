@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4e142fd43b38ab58c8080a9fb5f18861",
+    "hash": "da2ec78d780ea5464ebe7b33df6915bd",
     "packages": [
         {
             "name": "Ampersand/Deploy",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GetAmpersand/Deploy.git",
-                "reference": "7530f2a2362182cf6ebb1ddbedd044a2f292ff41"
+                "reference": "ceee7a2537504bf3f589b6a27be1e7404059f342"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GetAmpersand/Deploy/zipball/7530f2a2362182cf6ebb1ddbedd044a2f292ff41",
-                "reference": "7530f2a2362182cf6ebb1ddbedd044a2f292ff41",
+                "url": "https://api.github.com/repos/GetAmpersand/Deploy/zipball/ceee7a2537504bf3f589b6a27be1e7404059f342",
+                "reference": "ceee7a2537504bf3f589b6a27be1e7404059f342",
                 "shasum": ""
             },
             "require": {
@@ -61,7 +61,7 @@
                 "source": "https://github.com/GetAmpersand/Deploy/tree/master",
                 "issues": "https://github.com/GetAmpersand/Deploy/issues"
             },
-            "time": "2014-07-28 18:42:42"
+            "time": "2014-07-28 18:59:34"
         },
         {
             "name": "Ampersand/HTML",
@@ -111,6 +111,54 @@
                 "issues": "https://github.com/GetAmpersand/HTML/issues"
             },
             "time": "2014-07-28 18:28:39"
+        },
+        {
+            "name": "crell/api-problem",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Crell/ApiProblem.git",
+                "reference": "2f089ef08021b8ce4bdfbde386d95ef8ebe48f3d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Crell/ApiProblem/zipball/2f089ef08021b8ce4bdfbde386d95ef8ebe48f3d",
+                "reference": "2f089ef08021b8ce4bdfbde386d95ef8ebe48f3d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Crell\\ApiProblem": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Larry Garfield",
+                    "email": "larry@garfieldtech.com",
+                    "homepage": "http://www.garfieldtech.com/"
+                }
+            ],
+            "description": "PHP wrapper for the api-problem IETF specification",
+            "homepage": "https://github.com/Crell/ApiProblem",
+            "keywords": [
+                "api-problem",
+                "http",
+                "json",
+                "rest",
+                "xml"
+            ],
+            "time": "2013-06-28 05:22:26"
         },
         {
             "name": "erusev/parsedown",
@@ -753,70 +801,14 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "filp/whoops",
-            "version": "1.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/filp/whoops.git",
-                "reference": "9f451fbc7b8cad5e71300672c340c28c6bec09ff"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/9f451fbc7b8cad5e71300672c340c28c6bec09ff",
-                "reference": "9f451fbc7b8cad5e71300672c340c28c6bec09ff",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Whoops": "src/"
-                },
-                "classmap": [
-                    "src/deprecated"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Filipe Dobreira",
-                    "homepage": "https://github.com/filp",
-                    "role": "Developer"
-                }
-            ],
-            "description": "php error handling for cool kids",
-            "homepage": "https://github.com/filp/whoops",
-            "keywords": [
-                "error",
-                "exception",
-                "handling",
-                "library",
-                "silex-provider",
-                "whoops",
-                "zf2"
-            ],
-            "time": "2014-07-11 05:56:54"
-        }
+
     ],
     "aliases": [
 
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "crell/api-problem": 20,
         "ampersand/html": 20,
         "ampersand/deploy": 20
     },

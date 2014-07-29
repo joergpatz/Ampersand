@@ -14,6 +14,7 @@
     "require": {
         "php": ">=5.4.0",
         "slim/slim": "2.*",
+        "crell/api-problem": "*@dev",
         "symfony/console": "2.5.*",
         "symfony/finder": "2.5.*",
         "symfony/filesystem": "2.5.*",
@@ -21,9 +22,6 @@
         "Ampersand/HTML": "dev-master",
         "Ampersand/Deploy": "dev-master",
         "monolog/monolog": "1.10.*"
-    },
-    "require-dev": {
-    	"filp/whoops": "1.*"
     },
     "autoload": {
         "psr-4": {

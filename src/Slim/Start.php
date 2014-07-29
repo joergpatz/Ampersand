@@ -41,4 +41,5 @@ $app->container->singleton('response', function() {
 $app->setName('Ampersand');
 $app->add(new \Slim\Middleware\ContentTypes());
 $app->add(new \Ampersand\Slim\Middlewares\Cors());
+$app->add(new \Ampersand\Slim\Middlewares\ApiError());
 $app->add(new \Ampersand\Slim\Middlewares\AcceptHeader());
