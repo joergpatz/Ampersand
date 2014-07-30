@@ -22,7 +22,7 @@ class Cors extends \Slim\Middleware
 
         // Get current route
         $route = $app->router()->getCurrentRoute();
-        $httpMethods = $route->getHttpMethods();
+        $httpMethods = !is_null($route) ? $route->getHttpMethods() : array();
 
         //if preflight OPTIONS request set some Response Headers which used in it
         if (isset($httpMethods[0]) && $httpMethods[0] === 'OPTIONS') {

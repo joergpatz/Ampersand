@@ -2,6 +2,8 @@
 
 namespace Ampersand\Slim\Middlewares;
 
+use Ampersand\Slim\Exceptions\HttpException;
+
 /**
  * Class ApiError
  *
@@ -20,14 +22,20 @@ class ApiError extends \Slim\Middleware
             $app->config('debug', false);
 
             $app->error(function(\Exception $e) use ($app) {
+
+                $status = $app->response->getStatus();
+                if ($e instanceof HttpException && $e->getStatusCode() > 0) {
+                    $status = $e->getStatusCode();
+                }
+
                 $app->response->apiProblem(array(
                     'detail'    => $e->getMessage(),
-                ), ($e->getStatusCode() > 0) ? $e->getStatusCode() : $app->response->getStatus());
+                ), $status);
             });
 
             $app->notFound(function() use ($app) {
                 $app->response->apiProblem(array(
-                    'detail'    => 'The route you are requesting for could not be found. Check the URL to ensure your resource request is spelled correctly.',
+                    'detail'    => 'The route you are requesting could not be found. Check the URL to ensure your resource request is spelled correctly.',
                 ), 404);
             });
         }
