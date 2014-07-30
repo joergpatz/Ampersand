@@ -22,14 +22,12 @@ class ApiError extends \Slim\Middleware
             $app->error(function(\Exception $e) use ($app) {
                 $app->response->apiProblem(array(
                     'detail'    => $e->getMessage(),
-                    'code'      => $app->response->getStatus()
-                ), $app->response->getStatus());
+                ), ($e->getStatusCode() > 0) ? $e->getStatusCode() : $app->response->getStatus());
             });
 
             $app->notFound(function() use ($app) {
                 $app->response->apiProblem(array(
-                    'detail'    => 'The page you are looking for could not be found. Check the URL to ensure your resource request is spelled correctly.',
-                    'code'      => 404
+                    'detail'    => 'The route you are requesting for could not be found. Check the URL to ensure your resource request is spelled correctly.',
                 ), 404);
             });
         }
