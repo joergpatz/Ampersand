@@ -9,6 +9,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/GetAmpersand/Deploy"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/GetAmpersand/Passwordless"
         }
     ],
     "require": {
@@ -21,6 +25,7 @@
         "symfony/yaml": "2.5.*",
         "Ampersand/HTML": "dev-master",
         "Ampersand/Deploy": "dev-master",
+        "Ampersand/Passwordless": "dev-master",
         "monolog/monolog": "1.10.*"
     },
     "autoload": {
