@@ -5,14 +5,14 @@ namespace Ampersand\RedBeanPHP;
 use R;
 
 /**
- * Class Pages
+ * Class Channels
  *
  * RedBean FUSE Model
  * a place to put validation and business logic
  *
  * @package Ampersand\RedBeanPHP
  */
-class Pages extends \RedBeanPHP\SimpleModel
+class Channels extends \RedBeanPHP\SimpleModel
 {
     /**
      * R::store() invokes update() and after_update()

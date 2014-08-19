@@ -1,4 +1,5 @@
 {
+    "type":"TestType",
     "title":"Test",
     "layout":"default"
 }

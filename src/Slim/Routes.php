@@ -6,13 +6,13 @@
  * Syntax: "resources-action"
  */
 
-// PAGES resource
-$app->group('/pages', function() use ($app) {
-    $app->get('/', callFunc(array('\Ampersand\Slim\Controllers\Pages', 'index'), $app))->name('pages-index');
-    $app->get('/:id', callFunc(array('\Ampersand\Slim\Controllers\Pages', 'show'), $app))->name('pages-show');
-    $app->post('/', callFunc(array('\Ampersand\Slim\Controllers\Pages', 'store'), $app))->name('pages-store');
-    $app->put('/:id', callFunc(array('\Ampersand\Slim\Controllers\Pages', 'update'), $app))->name('pages-update');
-    $app->delete('/:id', callFunc(array('\Ampersand\Slim\Controllers\Pages', 'delete'), $app))->name('pages-delete');
+// CHANNELS resource
+$app->group('/channels', function() use ($app) {
+    $app->get('/', callFunc(array('\Ampersand\Slim\Controllers\Channels', 'index'), $app))->name('channels-index');
+    $app->get('/:id', callFunc(array('\Ampersand\Slim\Controllers\Channels', 'show'), $app))->name('channels-show');
+    $app->post('/', callFunc(array('\Ampersand\Slim\Controllers\Channels', 'store'), $app))->name('channels-store');
+    $app->put('/:id', callFunc(array('\Ampersand\Slim\Controllers\Channels', 'update'), $app))->name('channels-update');
+    $app->delete('/:id', callFunc(array('\Ampersand\Slim\Controllers\Channels', 'delete'), $app))->name('channels-delete');
 });
 
 // INDEX

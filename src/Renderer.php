@@ -58,7 +58,7 @@ class Renderer
     public function render($pageId)
     {
         $filesystem = new Filesystem();
-        $pageRecord = R::getRow('SELECT * FROM pages WHERE id = ?', array($pageId));
+        $pageRecord = R::getRow('SELECT * FROM channels WHERE id = ?', array($pageId));
 
         $page = new Page(array(
             'layout_directory' => 'bundles/default/layouts',
@@ -93,7 +93,7 @@ class Renderer
     #
     public function renderAll()
     {
-        $pages = R::getAssoc('SELECT id,title FROM pages');
+        $pages = R::getAssoc('SELECT id,title FROM channels');
 
         if(is_array($pages) && count($pages) > 0){
             foreach($pages as $key => $title){

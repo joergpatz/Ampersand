@@ -3,26 +3,26 @@ namespace Ampersand\Slim\Controllers;
 
 use R;
 
-class Pages
+class Channels
 {
-    private static $table = 'pages';
+    private static $table = 'channels';
 
     static public function index($app)
     {
-        // retrieve all beans from pages table
-        $pages = R::findAll(self::$table);
+        // retrieve all beans from channels table
+        $channels = R::findAll(self::$table);
 
-        $app->response->setBody(R::exportAll($pages));
+        $app->response->setBody(R::exportAll($channels));
     }
 
     static public function show($app, $id)
     {
         // retrieve a single bean by ID
-        $page = R::load(self::$table, $id);
+        $channel = R::load(self::$table, $id);
 
         //TODO: findOrFail
 
-        $app->response->setBody($page->export());
+        $app->response->setBody($channel->export());
     }
 
     static public function store($app)
@@ -30,15 +30,15 @@ class Pages
         // get the request body, a middleware automatically convert the json to an array
         $body = $app->request->getBody();
 
-        // create a new page
-        $page = R::dispense(self::$table);
+        // create a new channel
+        $channel = R::dispense(self::$table);
         // import all values from the body data with a property selection
-        $page->import($body, 'title,layout');
+        $channel->import($body, 'type,title,layout');
 
-        R::store($page);
+        R::store($channel);
 
         // send back the freshly loaded bean
-        $app->response->setBody($page->fresh()->export());
+        $app->response->setBody($channel->fresh()->export());
     }
 
     static public function update($app, $id)
@@ -47,28 +47,28 @@ class Pages
         $body = $app->request->getBody();
 
         // retrieve the single bean object by ID
-        $page = R::load(self::$table, $id);
+        $channel = R::load(self::$table, $id);
 
         //TODO: findOrFail
 
         // import all values from the body data with a property selection
-        $page->import($body, 'title,layout');
+        $channel->import($body, 'type,title,layout');
 
-        R::store($page);
+        R::store($channel);
 
         // send back the freshly loaded bean
-        $app->response->setBody($page->fresh()->export());
+        $app->response->setBody($channel->fresh()->export());
     }
 
     static public function delete($app, $id)
     {
         // retrieve a single bean by ID
-        $page = R::load(self::$table, $id);
+        $channel = R::load(self::$table, $id);
 
         //TODO: findOrFail
 
-        R::trash($page);
+        R::trash($channel);
 
-        $app->response->setBody(array('message' => 'The page resource was deleted.'));
+        $app->response->setBody(array('message' => 'The channel resource was deleted.'));
     }
 }

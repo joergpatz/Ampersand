@@ -30,7 +30,7 @@ class Cors extends \Slim\Middleware
             $app->response->headers->set('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept');
 
             //NOTE: The PreFlight OPTIONS route must show the possible HTTP methods for a route
-            //means e.g. if "index" and "store" action are on one route then you can perform GET, POST on "/pages" uri
+            //means e.g. if "index" and "store" action are on one route then you can perform GET, POST on "/channels" uri
             //default switch case is GET, okay then we do NOT need to write ONLY GET actions in a switch case
 
             // need "$app->options" implementation in Routes.php, action should the last portion of the name string
