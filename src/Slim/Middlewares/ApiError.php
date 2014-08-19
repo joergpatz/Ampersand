@@ -17,7 +17,7 @@ class ApiError extends \Slim\Middleware
         // Get reference to application
         $app = $this->app;
 
-        if ($app->request->headers->get('Content-Type') === 'application/json') {
+        if ($app->response->headers->get('Content-Type') === 'application/json') {
             // Switch to custom error handler by disable debug
             $app->config('debug', false);
 
@@ -35,7 +35,7 @@ class ApiError extends \Slim\Middleware
 
             $app->notFound(function() use ($app) {
                 $app->response->apiProblem(array(
-                    'detail'    => 'The route you are requesting could not be found. Check the URL to ensure your resource request is spelled correctly.',
+                    'detail'    => 'The route you are requesting could not be found. Check the URL to ensure your request is spelled correctly.',
                 ), 404);
             });
         }
