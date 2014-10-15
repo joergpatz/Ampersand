@@ -8,11 +8,29 @@
 
 // CHANNELS resource
 $app->group('/channels', function() use ($app) {
-    $app->get('/', callFunc(array('\Ampersand\Slim\Controllers\Channels', 'index'), $app))->name('channels-index');
-    $app->get('/:id', callFunc(array('\Ampersand\Slim\Controllers\Channels', 'show'), $app))->name('channels-show');
-    $app->post('/', callFunc(array('\Ampersand\Slim\Controllers\Channels', 'store'), $app))->name('channels-store');
-    $app->put('/:id', callFunc(array('\Ampersand\Slim\Controllers\Channels', 'update'), $app))->name('channels-update');
-    $app->delete('/:id', callFunc(array('\Ampersand\Slim\Controllers\Channels', 'delete'), $app))->name('channels-delete');
+    $app->get('/', callFunc(array('\Ampersand\Slim\Controllers\ChannelsController', 'index'), $app))->name('channels-index');
+    $app->get('/:id', callFunc(array('\Ampersand\Slim\Controllers\ChannelsController', 'show'), $app))->name('channels-show');
+    $app->post('/', callFunc(array('\Ampersand\Slim\Controllers\ChannelsController', 'store'), $app))->name('channels-store');
+    $app->put('/:id', callFunc(array('\Ampersand\Slim\Controllers\ChannelsController', 'update'), $app))->name('channels-update');
+    $app->delete('/:id', callFunc(array('\Ampersand\Slim\Controllers\ChannelsController', 'destroy'), $app))->name('channels-destroy');
+});
+
+// POSTS resource
+$app->group('/posts', function() use ($app) {
+    $app->get('/', callFunc(array('\Ampersand\Slim\Controllers\PostsController', 'index'), $app))->name('posts-index');
+    $app->get('/:id', callFunc(array('\Ampersand\Slim\Controllers\PostsController', 'show'), $app))->name('posts-show');
+    $app->post('/', callFunc(array('\Ampersand\Slim\Controllers\PostsController', 'store'), $app))->name('posts-store');
+    $app->put('/:id', callFunc(array('\Ampersand\Slim\Controllers\PostsController', 'update'), $app))->name('posts-update');
+    $app->delete('/:id', callFunc(array('\Ampersand\Slim\Controllers\PostsController', 'destroy'), $app))->name('posts-destroy');
+});
+
+// LOCATIONS resource
+$app->group('/locations', function() use ($app) {
+    $app->get('/', callFunc(array('\Ampersand\Slim\Controllers\LocationsController', 'index'), $app))->name('locations-index');
+    $app->get('/:id', callFunc(array('\Ampersand\Slim\Controllers\LocationsController', 'show'), $app))->name('locations-show');
+    $app->post('/', callFunc(array('\Ampersand\Slim\Controllers\LocationsController', 'store'), $app))->name('locations-store');
+    $app->put('/:id', callFunc(array('\Ampersand\Slim\Controllers\LocationsController', 'update'), $app))->name('locations-update');
+    $app->delete('/:id', callFunc(array('\Ampersand\Slim\Controllers\LocationsController', 'destroy'), $app))->name('locations-destroy');
 });
 
 // INDEX
